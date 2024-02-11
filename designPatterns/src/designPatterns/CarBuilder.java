@@ -6,13 +6,13 @@ public class CarBuilder implements VehicleBuilder {
 	@Override
 	public void buildEngine() {
 		// TODO Auto-generated method stub
-		System.out.println("Making Engine for car");
+		Engine carEngine = new Engine("Car Engine");
 	}
 
 	@Override
 	public void buildSteeringWheel() {
 		// TODO Auto-generated method stub
-		System.out.println("Making steering Wheels for car");
+		SteeringWheel carSteeringWheel = new SteeringWheel(1);
 		
 	}
 

@@ -3,6 +3,7 @@ package designPatterns;
 public class VehicleDriver {
 
 	public static void main(String[] args) {
+		
 		///Singleton
 		System.out.println("Demo Singleton:");
 		VehicleManager vehicleManager = VehicleManager.getInstance();
@@ -13,29 +14,41 @@ public class VehicleDriver {
 		VehicleManager vehicleManager2 = VehicleManager.getInstance();
 		
 		//Demonstrating both instances are the same object
-		System.out.println(vehicleManager);
-		System.out.println(vehicleManager2);
+		System.out.println("Reference of car: "+vehicleManager);
+		System.out.println("Reference of boat: "+vehicleManager2);
 		if (vehicleManager == vehicleManager2 ) {
-			System.out.println("There are the same object");
+			System.out.println("Singleton working, there are the same object");
 			}
+		
+		System.out.println("List of vehicles until now: " +vehicleManager.getVehicles());
+
 		
 		//Builder Pattern
 		System.out.println("\nDemo Builder Patterns:");
 		
 		//Building Car
 		System.out.println("\nBuilding Car:");
-	
 	    VehicleBuilder carBuilder = new CarBuilder();
 	    VehicleDirector carDirector = new VehicleDirector(carBuilder);
 	    carDirector.build();
-	    System.out.println("Car:\n" + carBuilder.getVehicle());
+	    System.out.println("Car reference: " + carBuilder.getVehicle());
+	    //Adding car to List
+	    vehicleManager.addVehicle(carBuilder.getVehicle());
 	    
 	    //Building boat
 		System.out.println("\nBuilding Boat:");
-	
 	    VehicleBuilder boatBuilder = new BoatBuilder();
 	    VehicleDirector boatDirector = new VehicleDirector(boatBuilder);
 	    boatDirector.build();
-	    System.out.println("Boat:\n"  +boatBuilder.getVehicle());
+	    System.out.println("Boat reference :"  +boatBuilder.getVehicle());
+	    //Adding boat to List
+	    vehicleManager2.addVehicle(boatBuilder.getVehicle());
+	    
+	    //Verifying singleton again
+		if (vehicleManager == vehicleManager2 ) {
+			System.out.println("\nSingleton working, there are the same object");
+			}
+		System.out.println("List of vehicles until now: " +vehicleManager.getVehicles());
+
 	}	
 }

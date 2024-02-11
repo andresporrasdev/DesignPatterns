@@ -5,13 +5,13 @@ public class BoatBuilder implements VehicleBuilder{
 
 	@Override
 	public void buildEngine() {
-		System.out.println("Making Engine for Boat");
+		Engine boatEngine = new Engine("Boat Engine");
 		
 	}
 
 	@Override
 	public void buildSteeringWheel() {
-		System.out.println("Making steering wheel for Boat");
+		SteeringWheel boatSteeringWheels = new SteeringWheel(2);
 		
 	}
 
