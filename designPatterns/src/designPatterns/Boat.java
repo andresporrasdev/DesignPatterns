@@ -1,6 +1,6 @@
 package designPatterns;
 
-public class Boat extends Vehicle{
+class Boat extends Vehicle{
 
 	@Override
 	void start() {

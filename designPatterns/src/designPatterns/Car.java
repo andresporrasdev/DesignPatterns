@@ -1,6 +1,6 @@
 package designPatterns;
 
-public class Car extends Vehicle{
+class Car extends Vehicle{
     Car() {
     	vehicleType = "Car";
     }

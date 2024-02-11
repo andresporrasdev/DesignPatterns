@@ -16,13 +16,9 @@ public class VehicleDriver {
 		//Demonstrating both instances are the same object
 		System.out.println("Reference of car: "+vehicleManager);
 		System.out.println("Reference of boat: "+vehicleManager2);
-		if (vehicleManager == vehicleManager2 ) {
-			System.out.println("Singleton working, there are the same object");
-			}
-		
-		System.out.println("List of vehicles until now: " +vehicleManager.getVehicles());
+		CheckingSingleton checkSingleton = new CheckingSingleton();
+		checkSingleton.checking(vehicleManager, vehicleManager2);
 
-		
 		//Builder Pattern
 		System.out.println("\nDemo Builder Patterns:");
 		
@@ -45,10 +41,7 @@ public class VehicleDriver {
 	    vehicleManager2.addVehicle(boatBuilder.getVehicle());
 	    
 	    //Verifying singleton again
-		if (vehicleManager == vehicleManager2 ) {
-			System.out.println("\nSingleton working, there are the same object");
-			}
-		System.out.println("List of vehicles until now: " +vehicleManager.getVehicles());
+		checkSingleton.checking(vehicleManager, vehicleManager2);
 
 	}	
 }
