@@ -42,6 +42,14 @@ public class VehicleDriver {
 	    
 	    //Verifying singleton again
 		checkSingleton.checking(vehicleManager, vehicleManager2);
+		
+		//Demo Single Factory
+		System.out.println("\nDemo Single Factory Pattern:");
+		VehicleFactory vehicleFactory= new VehicleFactory();
+		vehicleFactory.getVehicle("Car");
+		vehicleFactory.getVehicle("Boat");
+	    //Verifying singleton again
+		checkSingleton.checking(vehicleManager, vehicleManager2);
 
 	}	
 }
